@@ -1,0 +1,25 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["interactiveTransactions"]
+
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  name String @db.VarChar(255)
+  address            String?  @db.VarChar(255)
+  city               String?  @db.VarChar(255)
+  country            String?  @db.VarChar(255)
+  countryPhoneNumber String?  @db.VarChar(6)
+  createdAt          DateTime @default(now()) @db.Timestamp(6)
+  email              String   @unique(map: "User_email_key") @db.VarChar(255)
+  forename           String   @db.VarChar(255)
+  zipCode String? @db.VarChar(255)
+  id_user  String? @unique
+  birthday String?
+
+}
