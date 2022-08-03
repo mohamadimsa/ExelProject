@@ -50,17 +50,17 @@ const server = http.createServer(app);
     console.log(e.toString());
   }
 
-  // cookie / session
-  const cookieParser = require("cookie-parser");
-  const bodyParser = require("body-parser");
-  const session = require("express-session");
-  const oneDay = 1000 * 60 * 60 * 24;
-  const sess = {
-    secret: process.env.SESSION_SECRET,
-    cookie: { secure: false, maxAge: oneDay },
-    resave: false,
-    saveUninitialized: true,
-  };
+  // // cookie / session
+  // const cookieParser = require("cookie-parser");
+   const bodyParser = require("body-parser");
+  // const session = require("express-session");
+  // const oneDay = 1000 * 60 * 60 * 24;
+  // const sess = {
+  //   secret: process.env.SESSION_SECRET,
+  //   cookie: { secure: false, maxAge: oneDay },
+  //   resave: false,
+  //   saveUninitialized: true,
+  // };
 
   if (process.env.APP_ENV === "production") {
     Object.defineProperty(app.request, "ip", {
@@ -87,12 +87,12 @@ const server = http.createServer(app);
   // parse x-www-form-urlencoded
   app.use(bodyParser.urlencoded({ extended: true }));
 
-  app.use(session(sess));
+ // app.use(session(sess));
 
   // parse application/json
   app.use(bodyParser.json());
 
-  app.use(cookieParser());
+  //app.use(cookieParser());
 
   app.use(morgan("tiny"));
 

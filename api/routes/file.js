@@ -8,7 +8,7 @@ module.exports = [
      */
     {
         url: "/importxls",
-        method: "post",
+        method: "get",
         func: [Controller['FileController@updateXls']],
         functionName: 'update',
         //perm: ['*']

@@ -19,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^4.1.1",
+    "axios": "^0.27.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
@@ -30,6 +31,7 @@
     "jsonwebtoken": "^8.5.1",
     "link-module-alias": "^1.2.0",
     "morgan": "^1.10.0",
+    "node-excel-export": "^1.4.4",
     "nodemon": "^2.0.19",
     "xlsx": "^0.18.5"
   }
